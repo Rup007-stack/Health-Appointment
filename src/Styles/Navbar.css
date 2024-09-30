@@ -1,0 +1,225 @@
+body{
+    overflow-x: hidden;
+}
+.navbar-section {
+    padding: 0 32px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 70px;
+    background-color: rgb(228, 228, 228);
+    position: relative;
+}
+.navbar-title a {
+    color: #1A8EFD;
+    letter-spacing: .6px;
+    text-decoration: none;
+    transition: transform 4s ease-out 3s ;
+}
+.navbar-title:hover{
+   transform: scale(1.2);
+   border-radius: 10px;
+   border: 2px solid white;
+}
+.navbar-title {
+    font-family: 'Poppins', sans-serif;
+}
+.navbar-sign {
+    color: #54de54;
+    font-family: Cambria, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+.navbar-items {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  width:650px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+
+  transform: translate(-50%, -50%);
+  display: flex;
+  .nav-li{
+    list-style: none;
+    .navbar-links{
+      position: relative;
+      display: block;
+      text-transform: uppercase;
+      margin: 20px 0;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #262626;
+      font-family: sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      transition: .5s;
+      z-index: 1;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-top: 2px solid #262626;
+        border-bottom: 2px solid #262626;
+        transform: scaleY(2);
+        opacity: 0;
+        transition: .3s;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #262626;
+        transform: scale(0);
+        opacity: 0;
+        transition: .3s;
+        z-index: -1;
+      }
+      &:hover {
+        color: #fff;
+        &:before {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+        &:after {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+
+.navbar-items > li {
+    list-style-type: none;
+    position: relative;
+}
+.navbar-links {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    letter-spacing: .8px;
+}
+.navbar-links:hover {
+    color: #0cc2ea;
+}
+.navbar-btn {
+    color: white ;
+    background-color: #010c16;
+    padding: 20px;
+    border: 4px solid #ffffff ;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    position: relative;
+    left:600px;
+    font-size: 14px;
+}
+.navbar-btn:hover {
+color: #1A8EFD;;
+border-radius: 50px;
+border-color: #3459ff ;
+background-color: white;
+border: 1px solid #1A8EFD;
+transition: all 0.3s ease 0s;
+}
+.signup-btn{
+    
+    padding: 7px 10px;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 28px;
+    outline: transparent;
+    background-color: #010c16;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: .8px;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+.signup-btn:hover {
+    color: #1A8EFD;
+    background-color: white;
+    border: 1px solid #1A8EFD;
+}
+/* Hamburger Icon */
+.mobile-nav {
+    display: none;
+}
+.hamb-icon {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+.hamb-icon:hover {
+    color: #0cc2ea;
+}
+/* Mobile Navbar */
+.mobile-navbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: white;
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+    transition: left .5s ease-in-out;
+}
+.mobile-navbar-close {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+}
+.mobile-navbar-close .hamb-icon:hover {
+    color: rgb(255, 22, 22);
+}
+.open-nav {
+    left: 0;
+}
+.mobile-navbar-links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    gap: 24px;
+    text-align: center;
+}
+.mobile-navbar-links li a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: .8px;
+    transition: color .3s ease-in-out;
+}
+.mobile-navbar-links li a:hover {
+    color: #0cc2ea;
+}
+/* Responsive */
+@media screen and (max-width: 990px) {
+    .navbar-btn, .navbar-items {
+        display: none;
+    }
+    .mobile-nav {
+        display: block;
+    }
+          
+}
+
+@media screen and (max-width: 1090px) {
+.navbar-title, .navbar-sign{
+    
+}
+}
